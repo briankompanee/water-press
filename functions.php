@@ -109,6 +109,24 @@ function water_press_content_width() {
 add_action( 'after_setup_theme', 'water_press_content_width', 0 );
 
 /**
+* Change content_width value according to template selection.
+*
+*/
+function water_press_page_template_redirect_content_width() {
+
+	// Full Width in the absence of sidebar.
+	if( is_page() ){
+	   $sidebar_layout = water_press_page_sidebar_layout();
+       if( ( $sidebar_layout == 'no-sidebar' ) || ! ( is_active_sidebar( 'right-sidebar' ) ) ) $GLOBALS['content_width'] = 1170;
+
+	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
+		$GLOBALS['content_width'] = 1170;
+	}
+
+}
+add_action( 'template_redirect', 'water_press_page_template_redirect_content_width' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
