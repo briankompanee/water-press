@@ -14,7 +14,10 @@
  * @return array
  */
 function water_press_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
+
+    global $post;
+
+    // Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
@@ -22,6 +25,26 @@ function water_press_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
+	}
+
+    // Adds a class of custom-background-image to sites with a custom background image.
+	if ( get_background_image() ) {
+		$classes[] = 'custom-background-image';
+	}
+
+    // Adds a class of custom-background-color to sites with a custom background color.
+    if ( get_background_color() != 'ffffff' ) {
+		$classes[] = 'custom-background-color';
+	}
+
+    if( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) ) {
+		$classes[] = 'full-width';
+	}
+
+    if( is_page() ){
+		$sidebar_layout = get_post_meta( $post->ID, 'water_press_sidebar_layout', true );
+        if( $sidebar_layout == 'no-sidebar' )
+		$classes[] = 'full-width';
 	}
 
 	return $classes;
