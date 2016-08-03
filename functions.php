@@ -165,7 +165,6 @@ function water_press_scripts() {
     wp_enqueue_script( 'water-press-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
     wp_register_script( 'water-press-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), $version, true );
-    wp_localize_script( 'water-press-custom', 'water_press_data', $array );
     wp_enqueue_script( 'water-press-custom' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
