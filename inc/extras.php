@@ -63,3 +63,54 @@ function water_press_move_comment_field_to_bottom( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_fields', 'water_press_move_comment_field_to_bottom' );
+
+/**
+ * Callback function for Comment List *
+ *
+ * @link https://codex.wordpress.org/Function_Reference/wp_list_comments
+ */
+function water_press_theme_comment( $comment, $args, $depth ){
+    $GLOBALS['comment'] = $comment;
+	extract( $args, EXTR_SKIP );
+
+	if ( 'div' == $args['style'] ) {
+		$tag = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag = 'li';
+		$add_below = 'div-comment';
+	}
+?>
+	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' != $args['style'] ) : ?>
+	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	<?php endif; ?>
+	<div class="comment-author vcard">
+	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+	<?php printf( __( '<b class="fn">%s</b>', 'water-press' ), get_comment_author_link() ); ?>
+	</div>
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'water-press' ); ?></em>
+		<br />
+	<?php endif; ?>
+
+	<div class="comment-metadata commentmetadata">
+    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+		<time>
+        <?php
+			/* translators: 1: date, 2: time */
+			printf( __( '%1$s - %2$s', 'water-press' ), get_comment_date( 'M n, Y' ), get_comment_time() ); ?>
+        </time>
+    </a>
+	</div>
+
+    <div class="comment-content"><?php comment_text(); ?></div>
+
+	<div class="reply">
+	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+	</div>
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+	<?php endif; ?>
+<?php
+}
