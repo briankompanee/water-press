@@ -71,12 +71,21 @@ function water_press_setup() {
 		'link',
 	) );
 
-  /**
-    * Custom Logo Support
-  */
+	/*
+	 * Custom Logo Support.
+	 */
   add_theme_support( 'custom-logo', array(
   	'header-text' => array( 'site-title', 'site-description' ),
   ) );
+
+	/*
+	 * Add Custom Image Sizes.
+	 */
+  add_image_size( 'water-press-post-thumb', 80, 70, true);
+  add_image_size( 'water-press-full', 1170, 480, true);
+  add_image_size( 'water-press-with-sidebar', 750, 460, true);
+  add_image_size( 'water-press-cat-blog', 750, 360, true);
+  add_image_size( 'water-press-blog', 360, 280, true);
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'water_press_custom_background_args', array(
