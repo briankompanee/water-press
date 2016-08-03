@@ -104,7 +104,7 @@ add_action( 'after_setup_theme', 'water_press_setup' );
  * @global int $content_width
  */
 function water_press_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'water_press_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'water_press_content_width', 750 );
 }
 add_action( 'after_setup_theme', 'water_press_content_width', 0 );
 
