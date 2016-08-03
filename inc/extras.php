@@ -50,3 +50,16 @@ function water_press_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'water_press_body_classes' );
+
+/**
+* Hook to move comment text field to the bottom in WP 4.4
+*
+* @link http://www.wpbeginner.com/wp-tutorials/how-to-move-comment-text-field-to-bottom-in-wordpress-4-4/
+*/
+function water_press_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+}
+add_filter( 'comment_form_fields', 'water_press_move_comment_field_to_bottom' );
