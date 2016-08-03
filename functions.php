@@ -133,8 +133,8 @@ add_action( 'template_redirect', 'water_press_page_template_redirect_content_wid
  */
 function water_press_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'water-press' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Right Sidebar', 'water-press' ),
+		'id'            => 'right-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'water-press' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
