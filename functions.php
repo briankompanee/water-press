@@ -71,6 +71,13 @@ function water_press_setup() {
 		'link',
 	) );
 
+  /**
+    * Custom Logo Support
+  */
+  add_theme_support( 'custom-logo', array(
+  	'header-text' => array( 'site-title', 'site-description' ),
+  ) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'water_press_custom_background_args', array(
 		'default-color' => 'ffffff',
