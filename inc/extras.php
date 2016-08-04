@@ -119,7 +119,7 @@ function water_press_theme_comment( $comment, $args, $depth ){
  * Function to get Sections
  */
 function water_press_get_sections(){
-    $sections = array( 'about', 'cta1', 'blog', 'skills', 'gallery', 'cta2', 'contact' );
+    $sections = array( 'about', 'cta1', 'blog', 'experience', 'portfolio', 'cta2', 'contact' );
     $enabled_section = array();
     foreach ( $sections as $section ){
         if ( esc_attr( get_theme_mod( 'water_press_ed_' . $section . '_section' ) ) == 1 ){
