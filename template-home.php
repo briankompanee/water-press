@@ -16,46 +16,46 @@ get_header();
 
         if( ( $section['id'] == 'cta1' ) || ( $section['id'] == 'cta2' ) ){
     ?>
-
-              <section id="<?php echo esc_attr( $section['id'] ); ?>" class="cta-block">
-          		<div class="container">
-                      <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
-                  </div>
-              </section>
+          <section id="<?php echo esc_attr( $section['id'] ); ?>" class="cta-block">
+      		  <div class="container">
+              <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
+            </div>
+          </section>
 
     <?php }elseif( $section['id'] == 'hero' ) { ?>
 
-              <section id="<?php echo esc_attr( $section['id'] ); ?>" class="hero">
-          		<div class="container">
-                      <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
-                  </div>
-              </section>
+          <section id="<?php echo esc_attr( $section['id'] ); ?>" class="hero">
+      		  <div class="container">
+              <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
+            </div>
+          </section>
 
     <?php }elseif( $section['id'] == 'about' ) { ?>
 
-              <section id="<?php echo esc_attr( $section['id'] ); ?>" class="about">
-          		<div class="container">
-                      <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
-                  </div>
-              </section>
+          <section id="<?php echo esc_attr( $section['id'] ); ?>" class="about">
+      		  <div class="container">
+              <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
+            </div>
+          </section>
 
     <?php }elseif( $section['id'] == 'blog' ){ ?>
 
-              <section id="<?php echo esc_attr( $section['id'] ); ?>" class="skills">
-          		<div class="container">
-                      <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
-                  </div>
-              </section>
+          <section id="<?php echo esc_attr( $section['id'] ); ?>" class="skills">
+      		  <div class="container">
+              <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
+            </div>
+          </section>
 
     <?php }else{ ?>
 
-              <section id="<?php echo esc_attr( $section['id'] ); ?>">
-          		<div class="container">
-                      <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
-                  </div>
-              </section>
+          <section id="<?php echo esc_attr( $section['id'] ); ?>">
+      		  <div class="container">
+              <?php get_template_part( 'sections/section', esc_attr( $section['id'] ) ); ?>
+            </div>
+          </section>
 
     <?php }
+
       }
   }
 get_footer();
