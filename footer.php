@@ -18,12 +18,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-        <div class="container">
+    <div class="container">
 
-        <?php }
-
-            do_action( 'water_press_footer' );
-        ?>
+      <?php do_action( 'water_press_footer' ); ?>
 
 		</div><!-- .container -->
 
