@@ -151,7 +151,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_about_section',
       array(
           'title' => __( 'About Section', 'water-press' ),
-          'priority' => 20,
+          'priority' => 40,
           'panel' => 'water_press_home_page_settings',
       )
   );
@@ -217,7 +217,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_cta1_section',
       array(
           'title' => __( 'First Promotional Block Section', 'water-press' ),
-          'priority' => 40,
+          'priority' => 60,
           'panel' => 'water_press_home_page_settings',
       )
   );
@@ -419,7 +419,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_team_section',
       array(
           'title' => __( 'Team Section', 'water-press' ),
-          'priority' => 60,
+          'priority' => 100,
           'panel' => 'water_press_home_page_settings',
       )
   );
@@ -504,7 +504,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_portfolio_section',
       array(
           'title' => __( 'Portfolio Section', 'water-press' ),
-          'priority' => 50,
+          'priority' => 110,
           'panel' => 'water_press_home_page_settings',
       )
   );
@@ -665,7 +665,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_cta2_section',
       array(
           'title' => __( 'Second Promotional Block Section', 'water-press' ),
-          'priority' => 100,
+          'priority' => 120,
           'panel' => 'water_press_home_page_settings',
       )
   );
@@ -766,7 +766,7 @@ function water_press_customize_register( $wp_customize ) {
       'water_press_contact_section',
       array(
           'title' => __( 'Contact Section', 'water-press' ),
-          'priority' => 110,
+          'priority' => 130,
           'panel' => 'water_press_home_page_settings',
       )
   );
