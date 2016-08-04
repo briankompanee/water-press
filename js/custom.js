@@ -10,13 +10,6 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-    // grab an element
-	var myElement = document.querySelector("header");
-	// construct an instance of Headroom, passing the element
-	var headroom  = new Headroom(myElement);
-	// initialise
-	headroom.init();
-
 	$('#site-navigation').onePageNav({
         currentClass: 'current-menu-item',
         changeHash: false,
