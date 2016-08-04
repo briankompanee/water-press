@@ -11,6 +11,7 @@
  *
  * @package Water_Press
  */
+$sidebar_layout = water_press_sidebar_layout();
 
 get_header(); ?>
 
@@ -34,5 +35,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+if( $sidebar_layout == 'right-sidebar' )
 get_sidebar();
 get_footer();
