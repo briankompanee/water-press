@@ -80,6 +80,71 @@ function water_press_customize_register( $wp_customize ) {
           'description' => __( 'Customize Home Page Settings', 'water-press' ),
       )
   );
+/** Hero Section */
+  $wp_customize->add_section(
+      'water_press_hero_section',
+      array(
+          'title' => __( 'Hero Section', 'water-press' ),
+          'priority' => 20,
+          'panel' => 'water_press_home_page_settings',
+      )
+  );
+
+  /** Enable/Disable Hero Section */
+  $wp_customize->add_setting(
+      'water_press_ed_hero_section',
+      array(
+          'default' => '',
+          'sanitize_callback' => 'water_press_sanitize_checkbox',
+      )
+  );
+
+  $wp_customize->add_control(
+      'water_press_ed_hero_section',
+      array(
+          'label' => __( 'Enable Hero Section', 'water-press' ),
+          'section' => 'water_press_hero_section',
+          'type' => 'checkbox',
+      )
+  );
+
+  /** Hero Section Menu Title */
+  $wp_customize->add_setting(
+      'water_press_hero_section_menu_title',
+      array(
+          'default' => '',
+          'sanitize_callback' => 'sanitize_text_field',
+      )
+  );
+
+  $wp_customize->add_control(
+      'water_press_hero_section_menu_title',
+      array(
+          'label' => __( 'Hero Section Menu Title', 'water-press' ),
+          'section' => 'water_press_hero_section',
+          'type' => 'text',
+      )
+  );
+
+  /** Select Page */
+  $wp_customize->add_setting(
+      'water_press_hero_section_page',
+      array(
+          'default' => '',
+          'sanitize_callback' => 'water_press_sanitize_select',
+      )
+  );
+
+  $wp_customize->add_control(
+      'water_press_hero_section_page',
+      array(
+          'label' => __( 'Select Page', 'water-press' ),
+          'section' => 'water_press_hero_section',
+          'type' => 'select',
+          'choices' => $options_pages,
+      )
+  );
+/** End Of Hero Section Settings */
 
 /** About Section */
   $wp_customize->add_section(
@@ -143,25 +208,6 @@ function water_press_customize_register( $wp_customize ) {
           'section' => 'water_press_about_section',
           'type' => 'select',
           'choices' => $options_pages,
-      )
-  );
-
-  /** Select Post One */
-  $wp_customize->add_setting(
-      'water_press_about_section_post_one',
-      array(
-          'default' => '',
-          'sanitize_callback' => 'water_press_sanitize_select',
-      )
-  );
-
-  $wp_customize->add_control(
-      'water_press_about_section_post_one',
-      array(
-          'label' => __( 'Select Post One', 'water-press' ),
-          'section' => 'water_press_about_section',
-          'type' => 'select',
-          'choices' => $options_posts,
       )
   );
 /** End Of About Section Settings */
