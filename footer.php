@@ -10,15 +10,25 @@
  */
 
 ?>
-
-	</div><!-- #content -->
+<?php if( !is_page_template( 'template-home.php' ) ){ ?>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- #content -->
+<?php } ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'water-press' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'water-press' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'water-press' ), 'water-press', '<a href="http://brianshomeserver.com" rel="designer">Brian Brown</a>' ); ?>
-		</div><!-- .site-info -->
+
+        <div class="container">
+
+        <?php }
+
+            do_action( 'water_press_footer' );
+        ?>
+
+		</div><!-- .container -->
+
+		<a href="#page" class="scrollup"><?php esc_html_e( 'Scroll', 'water-press' ); ?></a>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
@@ -26,3 +36,4 @@
 
 </body>
 </html>
+
