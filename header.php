@@ -54,7 +54,6 @@
                 ?>
                     <nav id="site-navigation" class="main-navigation" role="navigation">
                         <ul>
-                            <li class="current-menu-item"><a href="<?php echo esc_url( home_url( '#home' ) ); ?>"><?php esc_html_e( 'Home', 'water-press' ); ?></a></li>
                         <?php
                             foreach( $enabled_sections as $section ){
                                 if( $section['menu_text'] ){
